@@ -13,7 +13,7 @@
                 return;
             }
 
-            var url = "/base/helloforname";
+            var url = "/base/helloforname?name="+myText.value;
             request.open("GET", url, true);
             request.onreadystatechange = displayDetails;
             request.send(null);

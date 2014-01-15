@@ -7,10 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
- @RequestMapping("/base")
+@RequestMapping("/base")
 public class HelloController {
 
     // @RequestMapping(method = RequestMethod.GET)
@@ -23,10 +24,8 @@ public class HelloController {
 
     @ResponseBody
     @RequestMapping(value = "/helloforname", produces = "text/plain")
-    public String addTitle() {
-        System.out.println("**** Called ajax");
-        return "QQRQ";
-        // System.out.println("Name: "+ name);
-        // return null;
+    public String addTitle(@RequestParam("name") String name) {
+        System.out.println("**** Called ajax " + name);
+        return "Mr " + name;
     }
 }
