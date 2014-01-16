@@ -8,7 +8,7 @@
 qqrq
 <h1>${message}</h1>
 
-<input type="text" id="name_id" onkeyup="keyUp()"/>
+<input type="text" id="name_id"/>
 
 <input type="text" id="result" disabled="disabled" style='outline:none'/>
 

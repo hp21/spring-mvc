@@ -2,6 +2,12 @@
  * Created by hp21 on 2014.01.16..
  */
 
+window.onload = initPage;
+function initPage() {
+    var myText = document.getElementById("name_id").onkeyup = keyUp;
+}
+
+
 function keyUp() {
     var myText = document.getElementById("name_id");
 
