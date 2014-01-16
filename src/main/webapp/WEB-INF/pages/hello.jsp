@@ -4,16 +4,15 @@
     <script>
         function keyUp() {
             var myText = document.getElementById("name_id");
-            //var label = document.getElementById("result");
-            //label.value = "Hello " + myText.value;
 
             var myRequest = createRequest();
+
             if (request == null) {
                 alert("Unable to create request");
                 return;
             }
 
-            var url = "/base/helloforname?name="+myText.value;
+            var url = "/base/helloforname?name=" + myText.value;
             request.open("GET", url, true);
             request.onreadystatechange = displayDetails;
             request.send(null);
@@ -40,7 +39,7 @@
         function displayDetails() {
             if (request.readyState == 4) {
                 if (request.status == 200) {
-                    detail = document.getElementById("result");
+                    var detail = document.getElementById("result");
                     detail.value = "Hello " + request.responseText;
                 }
             }
