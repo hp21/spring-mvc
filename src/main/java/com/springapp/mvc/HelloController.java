@@ -5,6 +5,7 @@ import javax.ws.rs.Produces;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,5 +28,12 @@ public class HelloController {
     public String addTitle(@RequestParam("name") String name) {
         System.out.println("**** Called ajax " + name);
         return "Mr " + name;
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/{name}", produces = "text/plain")
+    public String addTitleName(@PathVariable("name") String name) {
+        System.out.println("**** Called ajax " + name);
+        return "Mr (name) " + name;
     }
 }

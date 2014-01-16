@@ -12,7 +12,8 @@ function keyUp() {
         return;
     }
 
-    var url = "/base/helloforname?name=" + myText.value;
+//    var url = "/base/helloforname?name=" + myText.value;
+    var url = "/base/" + myText.value;
     request.open("GET", url, true);
     request.onreadystatechange = displayDetails;
     request.send(null);
