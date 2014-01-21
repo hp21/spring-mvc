@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
@@ -9,12 +9,14 @@
 
     <h:form id="performForm">
 
-        age: <h:inputText id="age" value="#{personBean.age}"/>
+        age:
+        <h:inputText id="age" value="#{personBean.age}"/>
         <br/>
-        Name: <h:inputText id="name" immediate="true" value="#{personBean.name}" required="true">
-        <f:validateRegex pattern="[a-zA-Z]+"/>
-        <f:ajax event="keyup" execute="@this" render="showMessage @this msg"/>
-    </h:inputText>
+        Name:
+        <h:inputText id="name" immediate="true" value="#{personBean.name}" required="true">
+            <f:validateRegex pattern="[a-zA-Z]+"/>
+            <f:ajax event="keyup" execute="@this" render="showMessage @this msg"/>
+        </h:inputText>
         <h:message id="msg" for="name"/>
 
         <br/>
