@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+</h:head>
+<h:body>
+
+    <h:form id="performForm">
+
+        age: <h:inputText id="age" value="#{personBean.age}"/>
+        <br/>
+        Name: <h:inputText id="name" immediate="true" value="#{personBean.name}" required="true">
+        <f:validateRegex pattern="[a-zA-Z]+"/>
+        <f:ajax event="keyup" execute="@this" render="showMessage @this msg"/>
+    </h:inputText>
+        <h:message id="msg" for="name"/>
+
+        <br/>
+        <h:outputText id="showMessage" value="#{personBean.name}"/>
+
+        <br/>
+
+        <h:commandButton id="rename" immediate="true" action="#{personBean.rename()}" value="Rename"/>
+
+
+    </h:form>
+
+    <p>Hello world!</p>
+</h:body>
+</html>
